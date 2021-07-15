@@ -1,0 +1,133 @@
+﻿@*@model IEnumerable<TesteMvcCoreEF.Models.PacienteViewModel>*@
+@model System.Data.DataTable
+
+@{
+    ViewData["Title"] = "Lista de Pacientes";
+}
+
+<div class="jumbotron">
+    <h1 class="text-center">@ViewData["Title"]</h1>
+</div>
+
+@*<p>
+        <a asp-action="Create">Create New</a>
+    </p>*@
+<table class="table table-bordered">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                Nome
+                @*@Html.DisplayNameFor(model => model.Nome)*@
+            </th>
+            <th>
+                Sobrenome
+                @*@Html.DisplayNameFor(model => model.Sobrenome)*@
+            </th>
+            <th>
+                DataNascimento
+                @*@Html.DisplayNameFor(model => model.DataNascimento)*@
+            </th>
+            <th>
+                Genero
+                @*@Html.DisplayNameFor(model => model.Genero)*@
+            </th>
+            <th>
+                CPF
+                @*@Html.DisplayNameFor(model => model.CPF)*@
+            </th>
+            <th>
+                RG
+                @*@Html.DisplayNameFor(model => model.RG)*@
+            </th>
+            <th>
+                Email
+                @*@Html.DisplayNameFor(model => model.Email)*@
+            </th>
+            <th>
+                Celular
+                @*@Html.DisplayNameFor(model => model.Celular)*@
+            </th>
+            <th>
+                TelefoneFixo
+                @*@Html.DisplayNameFor(model => model.TelefoneFixo)*@
+            </th>
+            <th>
+                Convenio
+                @*@Html.DisplayNameFor(model => model.Convenio)*@
+            </th>
+            <th>
+                CarterinhaConvenio
+                @*@Html.DisplayNameFor(model => model.CarterinhaConvenio)*@
+            </th>
+            <th>
+                ValidadeCarterinha
+                @*@Html.DisplayNameFor(model => model.ValidadeCarterinha)*@
+            </th>
+            <th>
+                <a asp-action="AddOrEdit">Create New</a>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (int i = 0; i < Model.Rows.Count; i++)
+        {
+            <tr>
+                <td>
+                    @Model.Rows[i]["Nome"]
+                    @*@Html.DisplayFor(modelItem => item.Nome)*@
+                </td>
+                <td>
+                    @Model.Rows[i]["Sobrenome"]
+                    @*@Html.DisplayFor(modelItem => item.Sobrenome)*@
+                </td>
+                <td>
+                    @Model.Rows[i]["DataNascimento"]
+                    @*@Html.DisplayFor(modelItem => item.DataNascimento)*@
+                </td>
+                <td>
+                    @Model.Rows[i]["Genero"]
+                    @*@Html.DisplayFor(modelItem => item.Genero)*@
+                </td>
+                <td>
+                    @Model.Rows[i]["CPF"]
+                    @*@Html.DisplayFor(modelItem => item.CPF)*@
+                </td>
+                <td>
+                    @Model.Rows[i]["RG"]
+                    @*@Html.DisplayFor(modelItem => item.RG)*@
+                </td>
+                <td>
+                    @Model.Rows[i]["Email"]
+                    @*@Html.DisplayFor(modelItem => item.Email)*@
+                </td>
+                <td>
+                    @Model.Rows[i]["Celular"]
+                    @*@Html.DisplayFor(modelItem => item.Celular)*@
+                </td>
+                <td>
+                    @Model.Rows[i]["TelefoneFixo"]
+                    @*@Html.DisplayFor(modelItem => item.TelefoneFixo)*@
+                </td>
+                <td>
+                    @Model.Rows[i]["Convenio"]
+                    @*@Html.DisplayFor(modelItem => item.Convenio)*@
+                </td>
+                <td>
+                    @Model.Rows[i]["CarterinhaConvenio"]
+                    @*@Html.DisplayFor(modelItem => item.CarterinhaConvenio)*@
+                </td>
+                <td>
+                    @Model.Rows[i]["ValidadeCarterinha"]
+                    @*@Html.DisplayFor(modelItem => item.ValidadeCarterinha)*@
+                </td>
+                <td>
+                    <a asp-action="AddOrEdit" asp-route-id="@Model.Rows[i]["ProntuarioID"]">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@Model.Rows[i]["ProntuarioID"]">Delete</a>
+                </td>
+            </tr>
+        }
+
+
+
+    </tbody>
+</table>
